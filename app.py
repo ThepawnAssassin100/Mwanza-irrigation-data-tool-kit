@@ -16,9 +16,9 @@ else:
         "EPA", "Section", "Visit Date", "Scheme", "GPS E", "GPS N",
         "Project", "Financial Year", "Quarter", "Month",
         "Male", "Female", "Total",
-        "Potential Area", "Developed Area", "Actual Area", "Newly Developed",
+        "Potential Area", "Developed Area", "Utilized Area", "Newly Developed",
         "Water Sources", "Irrigation Systems",
-        "1 Crop", "2 Crops", "3 Crops", "4 Crops",
+        "1 Crop", "2 Crops",
         "Challenges", "Solutions"
     ])
 
@@ -42,14 +42,12 @@ with st.form("data_form", clear_on_submit=True):
     with col2:
         potential = st.number_input("Potential Area (Ha)", step=0.1)
         developed = st.number_input("Developed Area (Ha)", step=0.1)
-        actual = st.number_input("Actual Irrigated Area (Ha)", step=0.1)
+        utilized = st.number_input("Utilized Area (Ha)", step=0.1)
         new_dev = st.number_input("Newly Developed Area (Ha)", step=0.1)
         water_sources = st.multiselect("Water Sources", ["Dam", "Stream", "Shallow Well", "Deep Well", "Borehole"])
-        systems = st.multiselect("Irrigation Systems", ["Watering cans", "Pumps", "Solar Pumps", "River diversion"])
+        technology = st.multiselect("Irrigation Systems", ["Watering cans", "Pumps", "Solar Pumps", "River diversion"])
         crop1 = st.number_input("Area under 1 Cropping Cycle (Ha)", step=0.1)
         crop2 = st.number_input("Area under 2 Cropping Cycles (Ha)", step=0.1)
-        crop3 = st.number_input("Area under 3 Cropping Cycles (Ha)", step=0.1)
-        crop4 = st.number_input("Area under 4 Cropping Cycles (Ha)", step=0.1)
         challenges = st.text_area("Challenges")
         solutions = st.text_area("Proposed Solutions")
 
